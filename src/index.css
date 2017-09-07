@@ -9,3 +9,7 @@ body {
   padding-right: 2em;
   height: 10%;
 }
+
+.btn-group {
+  margin-bottom: 2em;
+}
