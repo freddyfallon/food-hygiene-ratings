@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Jumbotron } from 'react-bootstrap';
-import Search from './components/search';
+import { Jumbotron } from 'react-bootstrap';
+import Search from './containers/search';
 import Ratings from './components/ratings';
 
 
