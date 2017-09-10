@@ -16,6 +16,10 @@ class Search extends Component {
   }
 
   render() {
+    if (!this.props.authorities) {
+      return <div>Loading...</div>
+    }
+
     return (
       <div>
         <Col xsOffset={0.5} md={2}>
