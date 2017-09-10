@@ -7,8 +7,8 @@ import { Col, Table } from 'react-bootstrap';
 class Ratings extends Component {
   render() {
     if (!this.props.ratings) {
-      return <Col md={8}>Please wait</Col>
-    }
+      return <Col md={8}>Select an authority to get started</Col>
+    } else if ( this.props.ratings )
     return (
       <Col md={8}>
         <Table>
@@ -21,35 +21,35 @@ class Ratings extends Component {
             <tbody>
               <tr>
                 <td>5-star</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.fiveStar}%`}</td>
               </tr>
               <tr>
                 <td>4-star</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.fourStar}%`}</td>
               </tr>
               <tr>
                 <td>3-star</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.threeStar}%`}</td>
               </tr>
               <tr>
                 <td>2-star</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.twoStar}%`}</td>
               </tr>
               <tr>
                 <td>1-star</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.oneStar}%`}</td>
               </tr>
               <tr>
                 <td>Pass</td>
-                <td>{`${this.props.ratings}%`}</td>
+                <td>{`${this.props.ratings.pass}%`}</td>
               </tr>
               <tr>
                 <td>Fail</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.fail}%`}</td>
               </tr>
               <tr>
                 <td>Exempt</td>
-                <td>Table cell</td>
+                <td>{`${this.props.ratings.exempt}%`}</td>
               </tr>
             </tbody>
           </Table>
