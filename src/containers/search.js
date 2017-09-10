@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchAuthorities } from '../actions/fetchAuthorities';
+import { fetchRatings } from '../actions/fetch_ratings';
 import { Col, ButtonGroup, DropdownButton, MenuItem  } from 'react-bootstrap';
 
 class Search extends Component {
@@ -9,9 +10,19 @@ class Search extends Component {
     this.props.fetchAuthorities();
   }
 
+  constructor(props) {
+    super(props);
+    this.renderAuthority = this.renderAuthority.bind(this);
+    this.clickAuthority = this.clickAuthority.bind(this);
+  }
+
+  clickAuthority(authorityId) {
+    this.props.fetchRatings(authorityId);
+  }
+
   renderAuthority(authorityData) {
     return (
-      <MenuItem key={authorityData.LocalAuthorityId} eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}</MenuItem>
+      <MenuItem onClick={() => {this.clickAuthority(authorityData.LocalAuthorityId)}} key={authorityData.LocalAuthorityId} eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}</MenuItem>
     )
   }
 
@@ -39,7 +50,7 @@ function mapStateToProps ({authorities}) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchAuthorities }, dispatch)
+  return bindActionCreators({ fetchAuthorities, fetchRatings }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)

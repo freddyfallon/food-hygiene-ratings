@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { Col, Table } from 'react-bootstrap';
 
 
 class Ratings extends Component {
   render() {
+    if (!this.props.ratings) {
+      return <Col md={8}>Please wait</Col>
+    }
     return (
       <Col md={8}>
         <Table>
@@ -35,6 +40,14 @@ class Ratings extends Component {
                 <td>Table cell</td>
               </tr>
               <tr>
+                <td>Pass</td>
+                <td>{`${this.props.ratings}%`}</td>
+              </tr>
+              <tr>
+                <td>Fail</td>
+                <td>Table cell</td>
+              </tr>
+              <tr>
                 <td>Exempt</td>
                 <td>Table cell</td>
               </tr>
@@ -45,4 +58,10 @@ class Ratings extends Component {
   }
 }
 
-export default Ratings;
+function mapStateToProps(state) {
+  return {
+    ratings: state.ratings
+  };
+}
+
+export default connect(mapStateToProps)(Ratings)

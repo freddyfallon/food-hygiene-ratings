@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Jumbotron } from 'react-bootstrap';
 import Search from './containers/search';
-import Ratings from './components/ratings';
+import Ratings from './containers/ratings';
 
 
 class App extends Component {
