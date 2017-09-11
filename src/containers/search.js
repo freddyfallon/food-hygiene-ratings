@@ -16,13 +16,13 @@ export class Search extends Component {
     this.clickAuthority = this.clickAuthority.bind(this);
   }
 
-  clickAuthority(authorityId) {
-    this.props.fetchRatings(authorityId);
+  clickAuthority(authorityId, authorityName) {
+    this.props.fetchRatings(authorityId, authorityName);
   }
 
   renderAuthority(authorityData) {
     return (
-      <MenuItem onClick={() => {this.clickAuthority(authorityData.LocalAuthorityId)}} key={authorityData.LocalAuthorityId} eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}</MenuItem>
+      <MenuItem onClick={() => {this.clickAuthority(authorityData.LocalAuthorityId, authorityData.Name)}} key={authorityData.LocalAuthorityId} eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}</MenuItem>
     )
   }
 

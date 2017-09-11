@@ -8,8 +8,28 @@ body {
   padding-left: 3em;
   padding-right: 2em;
   height: 10%;
+  font-family: 'Josefin Sans';
+  color: white;
+  background-color: #39CCCC;
 }
 
 .btn-group {
   margin-bottom: 2em;
+}
+
+#bg-justified-dropdown {
+  background-color: #39CCCC;
+  color: white;
+  font-family: 'Josefin Sans';
+  font-size: 17px;
+  border: none;
+}
+
+.dropdown-menu li {
+  font-family: 'Josefin Sans';
+}
+
+.col-md-8 {
+  font-family: 'Josefin Sans';
+  color: #4D5656;
 }

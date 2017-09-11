@@ -6,7 +6,9 @@ headers: { 'x-api-version': 2}
 const BASE_URL = 'http://api.ratings.food.gov.uk/Establishments?pageSize=5000&pageNumber=1&LocalAuthorityId='
 export const FETCH_RATINGS = 'FETCH_RATINGS';
 
-export function fetchRatings(authorityId) {
+export function fetchRatings(authorityId, authorityName) {
+
+  const name = `${authorityName}`;
 
   const pass = instance.get(`${BASE_URL + authorityId}`).then(function(response) {
       return Math.round(response.data.establishments.reduce(function (n, establishment) {
@@ -56,9 +58,9 @@ export function fetchRatings(authorityId) {
       }, 0) / response.data.establishments.length * 100)
     })
 
-  const ratings = axios.all([ pass, fail, exempt, fiveStar, fourStar, threeStar, twoStar, oneStar ])
-                .then( ([ pass, fail, exempt, fiveStar, fourStar, threeStar, twoStar, oneStar ]) => {
-                   return { pass, fail, exempt, fiveStar, fourStar, threeStar, twoStar, oneStar }
+  const ratings = axios.all([ name, pass, fail, exempt, fiveStar, fourStar, threeStar, twoStar, oneStar ])
+                .then( ([ name, pass, fail, exempt, fiveStar, fourStar, threeStar, twoStar, oneStar ]) => {
+                   return {name, pass, fail, exempt, fiveStar, fourStar, threeStar, twoStar, oneStar }
                 });
 
 

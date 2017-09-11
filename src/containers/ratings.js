@@ -10,6 +10,7 @@ export class Ratings extends Component {
     } else if ( this.props.ratings.pass === 0 && this.props.ratings.pass === 0 ) {
       return (
         <Col md={8}>
+          <h2 class="city-name">{this.props.ratings.name}</h2>
           <Table>
               <thead>
                 <tr>
@@ -48,6 +49,7 @@ export class Ratings extends Component {
       )
     } else return (
       <Col md={8}>
+      <h2 class="city-name">{this.props.ratings.name}</h2>
         <Table>
             <thead>
               <tr>
