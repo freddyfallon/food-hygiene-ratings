@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Col, Table } from 'react-bootstrap';
 
-
-class Ratings extends Component {
+export class Ratings extends Component {
   render() {
     if (!this.props.ratings) {
       return <Col md={8}>Select an authority to get started</Col>

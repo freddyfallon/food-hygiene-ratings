@@ -5,7 +5,7 @@ import { fetchAuthorities } from '../actions/fetchAuthorities';
 import { fetchRatings } from '../actions/fetch_ratings';
 import { Col, ButtonGroup, DropdownButton, MenuItem  } from 'react-bootstrap';
 
-class Search extends Component {
+export class Search extends Component {
   componentDidMount() {
     this.props.fetchAuthorities();
   }
