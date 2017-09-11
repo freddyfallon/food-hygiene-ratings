@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { connect, Provider } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Col, Table } from 'react-bootstrap';
 
 export class Ratings extends Component {

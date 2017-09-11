@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div>
       <Jumbotron>
-        <h1>Food Ratings Checker</h1>
+        <h1>Food Hygiene Ratings</h1>
         <p>A simple tool to check the food ratings for your local authority.</p>
       </Jumbotron>
       <Search />
