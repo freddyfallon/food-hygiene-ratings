@@ -48,7 +48,7 @@ export class Ratings extends Component {
       )
     } else return (
       <Col md={8}>
-      <h2 class="city-name">{this.props.ratings.name}</h2>
+      <h2 className="city-name">{this.props.ratings.name}</h2>
         <Table>
             <thead>
               <tr>
