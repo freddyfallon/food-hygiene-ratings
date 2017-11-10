@@ -22,7 +22,11 @@ export class Search extends Component {
 
   renderAuthority(authorityData) {
     return (
-      <MenuItem onClick={() => {this.clickAuthority(authorityData.LocalAuthorityId, authorityData.Name)}} key={authorityData.LocalAuthorityId} eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}</MenuItem>
+      <MenuItem 
+			onClick={() => {this.clickAuthority(authorityData.LocalAuthorityId, authorityData.Name)}} 
+			key={authorityData.LocalAuthorityId} 
+			eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}
+			</MenuItem>
     )
   }
 
