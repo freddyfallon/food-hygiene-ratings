@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Col, ButtonGroup, DropdownButton, MenuItem } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { fetchAuthorities } from '../actions/fetchAuthorities';
 import { fetchRatings } from '../actions/fetch_ratings';
-import { Col, ButtonGroup, DropdownButton, MenuItem  } from 'react-bootstrap';
 
 export class Search extends Component {
-  componentDidMount() {
-    this.props.fetchAuthorities();
-  }
-
   constructor(props) {
     super(props);
     this.renderAuthority = this.renderAuthority.bind(this);
     this.clickAuthority = this.clickAuthority.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchAuthorities();
   }
 
   clickAuthority(authorityId, authorityName) {
