@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
 import { fetchAuthorities } from '../actions/fetchAuthorities';
 import { fetchRatings } from '../actions/fetch_ratings';
 import { Col, ButtonGroup, DropdownButton, MenuItem  } from 'react-bootstrap';
@@ -29,6 +30,12 @@ export class Search extends Component {
 			</MenuItem>
     )
   }
+
+  static proptypes = {
+    authorities: PropTypes.array,
+    fetchAuthorities: PropTypes.func,
+    fetchRatings: PropTypes.func,
+  };
 
   render() {
     if (!this.props.authorities) {
