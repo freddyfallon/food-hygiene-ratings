@@ -23,12 +23,13 @@ export class Search extends Component {
 
   renderAuthority(authorityData) {
     return (
-      <MenuItem 
-			onClick={() => {this.clickAuthority(authorityData.LocalAuthorityId, authorityData.Name)}} 
-			key={authorityData.LocalAuthorityId} 
-			eventKey={authorityData.LocalAuthorityId}>{authorityData.Name}
-			</MenuItem>
-    )
+      <MenuItem
+        onClick={() => { this.clickAuthority(authorityData.LocalAuthorityId, authorityData.Name); }}
+        key={authorityData.LocalAuthorityId}
+        eventKey={authorityData.LocalAuthorityId}
+      >{authorityData.Name}
+      </MenuItem>
+    );
   }
 
   static proptypes = {
@@ -39,7 +40,7 @@ export class Search extends Component {
 
   render() {
     if (!this.props.authorities) {
-      return <div>Loading...</div>
+      return <div>Loading...</div>;
     }
 
     return (
@@ -52,16 +53,17 @@ export class Search extends Component {
           </ButtonGroup>
         </Col>
       </div>
-    )
+    );
   }
 }
 
-function mapStateToProps ({authorities}) {
-  return { authorities }
+
+function mapStateToProps({ authorities }) {
+  return { authorities };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchAuthorities, fetchRatings }, dispatch)
+  return bindActionCreators({ fetchAuthorities, fetchRatings }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search)
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
