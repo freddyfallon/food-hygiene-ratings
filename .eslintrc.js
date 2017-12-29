@@ -5,7 +5,6 @@ module.exports = {
   },
   extends: "airbnb",
   rules: {
-    'no-console': 1,
-    'no-unused-vars': [1, {argsIgnorePattern: 'resolve|reject|res|next|^err'}]
+    'no-console': 1
   }
 }
